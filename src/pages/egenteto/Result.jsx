@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { egentetoTypes } from "../../data/egentetoTypes";
+import CoupangBanner from "../../components/CoupangBanner";
 import "./styles.css";
 
 export default function EgentetoResult() {
@@ -98,6 +99,8 @@ export default function EgentetoResult() {
             ))}
           </div>
         </section>
+
+        <CoupangBanner />
 
         <div className="tst-result-actions">
           <button className="btn-share-result" onClick={handleShare}>

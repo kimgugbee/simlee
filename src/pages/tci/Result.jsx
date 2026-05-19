@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { tciTypes } from "../../data/tciTypes";
+import CoupangBanner from "../../components/CoupangBanner";
 import "./styles.css";
 
 export default function TciResult() {
@@ -74,6 +75,8 @@ export default function TciResult() {
             ))}
           </div>
         </section>
+
+        <CoupangBanner />
 
         <div className="tst-result-actions">
           <button

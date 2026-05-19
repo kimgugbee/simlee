@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { attachmentTypes } from "../../data/attachmentTypes";
+import CoupangBanner from "../../components/CoupangBanner";
 import "./styles.css";
 
 export default function AttachmentResult() {
@@ -71,6 +72,8 @@ export default function AttachmentResult() {
           <h2>나에게 도움이 되는 말</h2>
           <p>{data.advice}</p>
         </section>
+
+        <CoupangBanner />
 
         <div className="tst-result-actions">
           <button

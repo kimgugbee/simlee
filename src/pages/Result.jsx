@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { mbtiTypes } from "../data/mbtiTypes";
+import CoupangBanner from "../components/CoupangBanner";
 import "./Result.css";
 
 export default function Result() {
@@ -87,6 +88,8 @@ export default function Result() {
           <p className="result-famous">{data.famous.join(", ")}</p>
         </div>
       </div>
+
+      <CoupangBanner />
 
       <div className="result-actions">
         <button className="btn-share" onClick={handleShare}>
