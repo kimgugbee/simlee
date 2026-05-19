@@ -11,7 +11,7 @@ export default function Result() {
     return (
       <div className="result-error">
         <p>알 수 없는 유형입니다.</p>
-        <button onClick={() => navigate("/")}>홈으로</button>
+        <button onClick={() => navigate("/mbti")}>홈으로</button>
       </div>
     );
   }
@@ -74,7 +74,7 @@ export default function Result() {
               <span
                 key={c}
                 className="tag tag-compatible"
-                onClick={() => navigate(`/type/${c}`)}
+                onClick={() => navigate(`/mbti/type/${c}`)}
               >
                 {c} {mbtiTypes[c]?.title}
               </span>
@@ -97,11 +97,11 @@ export default function Result() {
         </button>
         <button
           className="btn-detail"
-          onClick={() => navigate(`/type/${data.name}`)}
+          onClick={() => navigate(`/mbti/type/${data.name}`)}
         >
           상세 정보 보기
         </button>
-        <button className="btn-retry" onClick={() => navigate("/quiz")}>
+        <button className="btn-retry" onClick={() => navigate("/mbti/quiz")}>
           다시 검사하기
         </button>
         <button className="btn-home" onClick={() => navigate("/")}>

@@ -8,6 +8,9 @@ export default function Home() {
   return (
     <div className="home">
       <div className="home-hero">
+        <button className="home-btn-back" onClick={() => navigate("/")}>
+          ←
+        </button>
         <div className="home-emoji">🧩</div>
         <h1 className="home-title">MBTI 성격 유형 검사</h1>
         <p className="home-subtitle">
@@ -18,7 +21,7 @@ export default function Home() {
           <span>⏱ 약 3분</span>
           <span>🎯 16가지 유형</span>
         </div>
-        <button className="btn-start" onClick={() => navigate("/quiz")}>
+        <button className="btn-start" onClick={() => navigate("/mbti/quiz")}>
           검사 시작하기
         </button>
       </div>
@@ -31,7 +34,7 @@ export default function Home() {
               key={type.name}
               className="type-card"
               style={{ borderColor: type.color }}
-              onClick={() => navigate(`/type/${type.name}`)}
+              onClick={() => navigate(`/mbti/type/${type.name}`)}
             >
               <span className="type-emoji">{type.emoji}</span>
               <span className="type-name" style={{ color: type.color }}>

@@ -31,7 +31,7 @@ export default function Quiz() {
       const newAnswers = [...answers, type];
       if (current + 1 >= questions.length) {
         const result = calculateMbti(newAnswers);
-        navigate(`/result/${result}`);
+        navigate(`/mbti/result/${result}`);
       } else {
         setCurrent(current + 1);
         setAnswers(newAnswers);
@@ -43,7 +43,7 @@ export default function Quiz() {
   return (
     <div className="quiz">
       <div className="quiz-header">
-        <button className="btn-back" onClick={() => navigate("/")}>
+        <button className="btn-back" onClick={() => navigate("/mbti")}>
           ← 홈
         </button>
         <span className="quiz-count">

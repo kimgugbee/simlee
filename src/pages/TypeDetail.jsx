@@ -11,7 +11,7 @@ export default function TypeDetail() {
     return (
       <div className="detail-error">
         <p>알 수 없는 유형입니다.</p>
-        <button onClick={() => navigate("/")}>홈으로</button>
+        <button onClick={() => navigate("/mbti")}>홈으로</button>
       </div>
     );
   }
@@ -65,7 +65,7 @@ export default function TypeDetail() {
                   key={c}
                   className="compatible-card"
                   style={{ borderColor: ct?.color }}
-                  onClick={() => navigate(`/type/${c}`)}
+                  onClick={() => navigate(`/mbti/type/${c}`)}
                 >
                   <span className="compatible-emoji">{ct?.emoji}</span>
                   <span className="compatible-name" style={{ color: ct?.color }}>
@@ -90,10 +90,10 @@ export default function TypeDetail() {
         </section>
 
         <div className="detail-actions">
-          <button className="btn-start-quiz" onClick={() => navigate("/quiz")}>
+          <button className="btn-start-quiz" onClick={() => navigate("/mbti/quiz")}>
             검사 시작하기
           </button>
-          <button className="btn-all-types" onClick={() => navigate("/")}>
+          <button className="btn-all-types" onClick={() => navigate("/mbti")}>
             모든 유형 보기
           </button>
         </div>
