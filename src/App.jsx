@@ -1,4 +1,5 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
+import KakaoGuard from "./components/KakaoGuard";
 import MainHome from "./pages/MainHome";
 import MbtiHome from "./pages/Home";
 import MbtiQuiz from "./pages/Quiz";
@@ -17,6 +18,7 @@ import "./App.css";
 
 function App() {
   return (
+    <KakaoGuard>
     <HashRouter>
       <div className="app">
         <Routes>
@@ -46,6 +48,7 @@ function App() {
         </Routes>
       </div>
     </HashRouter>
+    </KakaoGuard>
   );
 }
 
