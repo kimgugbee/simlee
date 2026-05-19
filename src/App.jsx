@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import MainHome from "./pages/MainHome";
 import MbtiHome from "./pages/Home";
 import MbtiQuiz from "./pages/Quiz";
@@ -17,7 +17,7 @@ import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="app">
         <Routes>
           {/* Main */}
@@ -45,7 +45,7 @@ function App() {
           <Route path="/attachment/result/:type" element={<AttachmentResult />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
