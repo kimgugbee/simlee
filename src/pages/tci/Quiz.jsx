@@ -1,16 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { tciQuestions } from "../../data/tciQuestions";
-import "./styles.css";
+import "../egenteto/styles.css";
 
 function calculateTci(answers) {
-  const scores = { NS: 0, HA: 0, RD: 0, P: 0 };
-  answers.forEach((dim) => {
-    if (dim) scores[dim]++;
+  const scores = { NS: 0, HA: 0, RD: 0, PS: 0, SD: 0, CO: 0, ST: 0 };
+  tciQuestions.forEach((q, i) => {
+    if (answers[i] === "A") scores[q.dimension]++;
   });
-  const typeMap = { NS: "탐험가형", HA: "수호자형", RD: "공감형", P: "완주자형" };
-  const maxDim = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
-  return typeMap[maxDim];
+  return scores;
 }
 
 export default function TciQuiz() {
@@ -22,13 +20,15 @@ export default function TciQuiz() {
   const question = tciQuestions[current];
   const progress = ((current / tciQuestions.length) * 100).toFixed(0);
 
-  function handleSelect(idx, dimension) {
+  function handleSelect(idx) {
     setSelectedIdx(idx);
+    const value = idx === 0 ? "A" : "B";
     setTimeout(() => {
-      const newAnswers = [...answers, dimension];
+      const newAnswers = [...answers, value];
       if (current + 1 >= tciQuestions.length) {
-        const result = calculateTci(newAnswers);
-        navigate(`/tci/result/${encodeURIComponent(result)}`);
+        const scores = calculateTci(newAnswers);
+        sessionStorage.setItem("tciResult", JSON.stringify(scores));
+        navigate("/tci/result");
       } else {
         setCurrent(current + 1);
         setAnswers(newAnswers);
@@ -73,25 +73,18 @@ export default function TciQuiz() {
         <h2 className="quiz-question">{question.text}</h2>
 
         <div className="quiz-options">
-          <button
-            className={`option-btn ${selectedIdx === 0 ? "selected" : ""}`}
-            style={selectedIdx === 0 ? { borderColor: "#FF6B35", background: "#fff3ed" } : {}}
-            onClick={() => handleSelect(0, question.a.dimension)}
-            disabled={selectedIdx !== null}
-          >
-            <span className="option-label">A</span>
-            <span className="option-text">{question.a.text}</span>
-          </button>
-
-          <button
-            className={`option-btn ${selectedIdx === 1 ? "selected" : ""}`}
-            style={selectedIdx === 1 ? { borderColor: "#F7971E", background: "#fff8e1" } : {}}
-            onClick={() => handleSelect(1, question.b.dimension)}
-            disabled={selectedIdx !== null}
-          >
-            <span className="option-label">B</span>
-            <span className="option-text">{question.b.text}</span>
-          </button>
+          {[question.a, question.b].map((opt, idx) => (
+            <button
+              key={idx}
+              className={`option-btn ${selectedIdx === idx ? "selected" : ""}`}
+              style={selectedIdx === idx ? { borderColor: "#FF6B35", background: "#fff3ed" } : {}}
+              onClick={() => handleSelect(idx)}
+              disabled={selectedIdx !== null}
+            >
+              <span className="option-label">{idx === 0 ? "A" : "B"}</span>
+              <span className="option-text">{opt.text}</span>
+            </button>
+          ))}
         </div>
       </div>
     </div>

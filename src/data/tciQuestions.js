@@ -1,128 +1,121 @@
-// Each question: A = scores the dimension, B = doesn't score
-// Dimensions: NS (자극추구), HA (위험회피), RD (사회적민감성), P (인내력)
+// 21문항 (차원별 3문항), A = 그렇다(+1), B = 아니다(0)
 export const tciQuestions = [
-  // NS (자극 추구) 1~5
+  // NS - 자극추구
   {
-    id: 1,
-    text: "새로운 것을 경험할 때 나는?",
-    a: { text: "설레고 흥분된다", dimension: "NS" },
-    b: { text: "익숙한 것이 더 편하다", dimension: null },
+    id: 1, dimension: "NS",
+    text: "새로운 경험을 할 때 설레고 흥분된다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
   },
   {
-    id: 2,
-    text: "늘 하던 방식 대신 새로운 방법을 시도하는 것이?",
-    a: { text: "재미있고 즐겁다", dimension: "NS" },
-    b: { text: "번거롭고 불필요하다", dimension: null },
+    id: 2, dimension: "NS",
+    text: "지루하고 반복적인 상황이 되면 금방 변화를 원한다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
   },
   {
-    id: 3,
-    text: "지루하고 반복적인 상황에서 나는?",
-    a: { text: "금방 지루해지고 변화를 원한다", dimension: "NS" },
-    b: { text: "안정적이라 오히려 편하다", dimension: null },
+    id: 3, dimension: "NS",
+    text: "좋은 아이디어가 떠오르면 바로 시도해보고 싶다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
+  },
+
+  // HA - 위험회피
+  {
+    id: 4, dimension: "HA",
+    text: "새로운 상황에서 걱정이 되고 신중하게 행동한다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
   },
   {
-    id: 4,
-    text: "즉흥적인 여행이나 계획 변경에 대해?",
-    a: { text: "신나고 좋다", dimension: "NS" },
-    b: { text: "준비가 필요해서 부담스럽다", dimension: null },
+    id: 5, dimension: "HA",
+    text: "위험해 보이는 일은 피하거나 최소화하려 한다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
   },
   {
-    id: 5,
-    text: "좋은 아이디어가 떠오르면?",
-    a: { text: "바로 시도해보고 싶다", dimension: "NS" },
-    b: { text: "충분히 검토한 후 실행한다", dimension: null },
+    id: 6, dimension: "HA",
+    text: "미래에 불확실한 상황이 생기면 많이 걱정된다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
   },
-  // HA (위험 회피) 6~10
+
+  // RD - 사회적 민감성
   {
-    id: 6,
-    text: "새로운 상황에 처했을 때 나는?",
-    a: { text: "걱정되고 신중하게 행동한다", dimension: "HA" },
-    b: { text: "큰 걱정 없이 일단 해본다", dimension: null },
-  },
-  {
-    id: 7,
-    text: "중요한 결정을 앞두고?",
-    a: { text: "부정적인 결과를 먼저 생각한다", dimension: "HA" },
-    b: { text: "긍정적으로 접근한다", dimension: null },
+    id: 7, dimension: "RD",
+    text: "다른 사람이 나를 칭찬하거나 인정해주면 매우 기쁘다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
   },
   {
-    id: 8,
-    text: "위험해 보이는 일에 대해?",
-    a: { text: "피하거나 최소화하려 한다", dimension: "HA" },
-    b: { text: "도전해볼 만하다고 생각한다", dimension: null },
+    id: 8, dimension: "RD",
+    text: "가까운 사람이 힘들어할 때 나도 같이 마음이 아프다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
   },
   {
-    id: 9,
-    text: "미래에 대한 불확실성이 있을 때?",
-    a: { text: "걱정이 되고 준비를 많이 한다", dimension: "HA" },
-    b: { text: "그때그때 대응하면 된다고 생각한다", dimension: null },
+    id: 9, dimension: "RD",
+    text: "다른 사람들이 나를 어떻게 생각하는지 많이 신경 쓰인다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
+  },
+
+  // PS - 인내력
+  {
+    id: 10, dimension: "PS",
+    text: "한번 시작한 일은 어렵더라도 끝까지 마무리한다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
   },
   {
-    id: 10,
-    text: "낯선 사람들 앞에서 발표해야 할 때?",
-    a: { text: "긴장되고 실수할까봐 많이 걱정된다", dimension: "HA" },
-    b: { text: "긴장은 하지만 그다지 두렵지 않다", dimension: null },
-  },
-  // RD (사회적 민감성) 11~15
-  {
-    id: 11,
-    text: "다른 사람이 나를 칭찬하거나 인정해줄 때?",
-    a: { text: "매우 기쁘고 중요하게 느껴진다", dimension: "RD" },
-    b: { text: "좋긴 하지만 크게 영향받지 않는다", dimension: null },
+    id: 11, dimension: "PS",
+    text: "목표를 세우면 달성할 때까지 포기하지 않는다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
   },
   {
-    id: 12,
-    text: "친한 사람이 슬퍼하거나 힘들어할 때?",
-    a: { text: "나도 같이 마음이 아프다", dimension: "RD" },
-    b: { text: "도움을 주고 싶지만 크게 영향받지 않는다", dimension: null },
+    id: 12, dimension: "PS",
+    text: "지금 당장 보상이 없어도 장기 목표를 위해 참을 수 있다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
+  },
+
+  // SD - 자율성
+  {
+    id: 13, dimension: "SD",
+    text: "내 삶에서 내가 진정 원하는 것이 무엇인지 잘 알고 있다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
   },
   {
-    id: 13,
-    text: "사람들과의 관계에서 나는?",
-    a: { text: "친밀한 관계를 매우 중요하게 여긴다", dimension: "RD" },
-    b: { text: "관계보다 개인 목표가 더 중요하다", dimension: null },
+    id: 14, dimension: "SD",
+    text: "어떤 상황에서도 내 행동에 스스로 책임을 진다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
   },
   {
-    id: 14,
-    text: "누군가의 부탁을 거절할 때?",
-    a: { text: "미안하고 불편한 마음이 든다", dimension: "RD" },
-    b: { text: "필요하면 담담하게 거절할 수 있다", dimension: null },
+    id: 15, dimension: "SD",
+    text: "내 약점을 인정하고 개선하려는 노력을 꾸준히 한다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
+  },
+
+  // CO - 연대감
+  {
+    id: 16, dimension: "CO",
+    text: "다른 사람의 입장에서 생각하려고 노력한다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
   },
   {
-    id: 15,
-    text: "다른 사람들이 나를 어떻게 생각하는지가?",
-    a: { text: "매우 신경 쓰인다", dimension: "RD" },
-    b: { text: "크게 신경 쓰지 않는다", dimension: null },
-  },
-  // P (인내력) 16~20
-  {
-    id: 16,
-    text: "한번 시작한 일이 힘들어지면?",
-    a: { text: "끝까지 마무리하려 한다", dimension: "P" },
-    b: { text: "상황에 따라 포기할 수도 있다", dimension: null },
+    id: 17, dimension: "CO",
+    text: "다른 사람을 도울 때 진심으로 만족감을 느낀다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
   },
   {
-    id: 17,
-    text: "목표를 세우면?",
-    a: { text: "달성할 때까지 포기하지 않는다", dimension: "P" },
-    b: { text: "상황이 바뀌면 목표도 바꿀 수 있다", dimension: null },
+    id: 18, dimension: "CO",
+    text: "사람들을 공정하고 배려 있게 대하려고 한다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
+  },
+
+  // ST - 자기초월
+  {
+    id: 19, dimension: "ST",
+    text: "자연이나 세상과 깊이 연결된 느낌을 받을 때가 있다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
   },
   {
-    id: 18,
-    text: "장기적인 프로젝트나 공부에 대해?",
-    a: { text: "꾸준히 조금씩 해나가는 편이다", dimension: "P" },
-    b: { text: "흥미가 없어지면 중단하기도 한다", dimension: null },
+    id: 20, dimension: "ST",
+    text: "나 자신을 넘어 더 큰 무언가의 일부라는 느낌이 든다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
   },
   {
-    id: 19,
-    text: "지금 당장 보상이 없어도?",
-    a: { text: "장기적인 목표를 위해 참을 수 있다", dimension: "P" },
-    b: { text: "즉각적인 보상이 있어야 동기가 생긴다", dimension: null },
-  },
-  {
-    id: 20,
-    text: "어렵고 힘든 상황에 처했을 때?",
-    a: { text: "버티고 극복하려 한다", dimension: "P" },
-    b: { text: "다른 방법을 찾거나 방향을 바꾼다", dimension: null },
+    id: 21, dimension: "ST",
+    text: "영적인 것이나 초월적 경험에 열린 마음을 갖고 있다",
+    a: { text: "그렇다" }, b: { text: "아니다" },
   },
 ];

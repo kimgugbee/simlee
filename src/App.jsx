@@ -39,7 +39,7 @@ function App() {
           {/* TCI */}
           <Route path="/tci" element={<TciHome />} />
           <Route path="/tci/quiz" element={<TciQuiz />} />
-          <Route path="/tci/result/:type" element={<TciResult />} />
+          <Route path="/tci/result" element={<TciResult />} />
 
           {/* 성인애착유형 */}
           <Route path="/attachment" element={<AttachmentHome />} />
