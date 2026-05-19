@@ -1,0 +1,170 @@
+.result {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.result-card {
+  background: white;
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-top: 6px solid var(--accent, #764ba2);
+  margin-bottom: 1.5rem;
+}
+
+.result-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.result-emoji {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.result-type {
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-bottom: 0.3rem;
+}
+
+.result-title {
+  font-size: 1.3rem;
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.result-desc {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.result-section {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.result-section h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 0.6rem;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.tag-strength {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.tag-weakness {
+  background: #fce4ec;
+  color: #c62828;
+}
+
+.tag-compatible {
+  background: #e3f2fd;
+  color: #1565c0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tag-compatible:hover {
+  background: #bbdefb;
+}
+
+.result-famous {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0;
+}
+
+.result-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.result-actions button {
+  padding: 0.9rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.result-actions button:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.btn-share {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.btn-kakao {
+  background: #fee500;
+  color: #3c1e1e;
+}
+
+.btn-detail {
+  background: #f0e8ff;
+  color: #764ba2;
+}
+
+.btn-retry {
+  background: #f5f5f5;
+  color: #444;
+}
+
+.btn-home {
+  background: none;
+  border: 1px solid #ddd !important;
+  color: #888;
+}
+
+.result-error {
+  text-align: center;
+  padding: 3rem;
+}
+
+@media (max-width: 480px) {
+  .result-card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .result-type {
+    font-size: 2.2rem;
+  }
+}
