@@ -1,5 +1,72 @@
 @import "../egenteto/styles.css";
 
+/* ─── TCI 5점 척도 퀴즈 ─── */
+.tci-quiz .quiz-card {
+  padding: 2rem 1.5rem 3rem;
+}
+
+.tci-dim-badge {
+  display: inline-block;
+  background: #fff3ed;
+  color: #FF6B35;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.tci-scale {
+  margin-top: 2rem;
+}
+
+.tci-scale-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-bottom: 0.6rem;
+  padding: 0 0.25rem;
+}
+
+.tci-scale-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.tci-scale-btn {
+  flex: 1;
+  aspect-ratio: 1;
+  max-width: 56px;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  background: white;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #bbb;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tci-scale-btn:hover:not(:disabled) {
+  border-color: #FF6B35;
+  color: #FF6B35;
+  transform: scale(1.08);
+}
+
+.tci-scale-btn:disabled {
+  cursor: default;
+}
+
+.tci-scale-btn.tci-selected {
+  border-color: transparent;
+}
+
 .tci-profile {
   display: flex;
   flex-direction: column;

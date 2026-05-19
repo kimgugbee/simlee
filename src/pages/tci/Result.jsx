@@ -4,7 +4,7 @@ import { tciDimensions } from "../../data/tciDimensions";
 import CoupangBanner from "../../components/CoupangBanner";
 import "./styles.css";
 
-const MAX = 3; // 차원별 최대 점수
+const MAX = 25; // 5문항 × 5점
 
 export default function TciResult() {
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ export default function TciResult() {
   const scSD = scores.SD ?? 0;
   const scCO = scores.CO ?? 0;
   const scSC = scSD + scCO;
-  const maxSC = MAX * 2;
+  const maxSC = MAX * 2; // 50점 만점
 
   function pct(score, max = MAX) {
     return Math.round((score / max) * 100);
